@@ -167,12 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -526,17 +526,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2892691768566949581, guid: c65e5c6b0d54d7c468238bad259835ca, type: 3}
   m_PrefabInstance: {fileID: 687641080}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &858979424 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1739463167274575883, guid: c65e5c6b0d54d7c468238bad259835ca, type: 3}
-  m_PrefabInstance: {fileID: 139312755928393528}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &958732699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,8 +1049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 1081338970}
   _buttonText: {fileID: 1771667520}
-  _mixer: {fileID: 24300002, guid: 509216f1e1b778345bbd3828634544a0, type: 2}
-  _masterVolumeSlider: {fileID: 858979424}
+  _listener: {fileID: 519420029}
 --- !u!1001 &1527643858
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,9 +18,19 @@ public class AudionGroupVolumeTuner : MonoBehaviour
         _slider.onValueChanged.RemoveListener(ChangeAudioGroupVolume);
     }
 
-    private void ChangeAudioGroupVolume(float value)
+    private void ChangeAudioGroupVolume(float normalizedValue)
     {
-        float mixerVolume = Mathf.Log10(value) * Constants.LogToDbRatio;
+        float mixerVolume = GetDbFromNormalizedValue(normalizedValue);
         _mixer.audioMixer.SetFloat(_audioGroup.ToString(), mixerVolume);
+    }
+
+    private float GetDbFromNormalizedValue(float value)
+    {
+        if (value == 0)
+        {
+            return Constants.MinDbVolume;
+        }
+
+        return Mathf.Log10(value) * Constants.LogToDbRatio;
     }
 }

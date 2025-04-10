@@ -1,14 +1,12 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SoundToggleMuter : MonoBehaviour
 {
     [SerializeField] private Button _button;
     [SerializeField] private TextMeshProUGUI _buttonText;
-    [SerializeField] private AudioMixerGroup _mixer;
-    [SerializeField] private Slider _masterVolumeSlider;
+    [SerializeField] private AudioListener _listener;
 
     private bool _isMusicOn = true;
     private string _buttonTextWhenSoundOn = "Выкл звук";
@@ -27,13 +25,8 @@ public class SoundToggleMuter : MonoBehaviour
     private void ToggleMuteSoundOption()
     {
         _isMusicOn = !_isMusicOn;
-        float volume = GetDbFromNormalizedValue(_isMusicOn ? _masterVolumeSlider.value : Constants.MuteNormalizedSoundValue);
-        _mixer.audioMixer.SetFloat(AudioGroup.MasterVolume.ToString(), volume);
+        _listener.enabled = _isMusicOn;
         _buttonText.text = _isMusicOn ? _buttonTextWhenSoundOn : _buttonTextWhenSoundOff;
     }
 
-    private float GetDbFromNormalizedValue(float sliderValue)
-    {
-        return Mathf.Log10(sliderValue) * Constants.LogToDbRatio;
-    }
 }
